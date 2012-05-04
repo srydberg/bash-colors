@@ -1,16 +1,16 @@
 #!/bin/bash
 
 echo "basic colors:"
-for i in $(seq 1 16)
+for i in {1..16}
 do
     printf %0b%s%0b "\e[48;5;${i}m" " " "\e[00m"
 done
 echo
 
 echo "colors:"
-for i in $(seq 0 5)
+for i in {0..5}
 do
-    for j in $(seq 0 35)
+    for j in {0..35}
     do
 	color=$((16 + (i * 36) + j))
 	printf %0b%s%0b "\e[48;5;${color}m" " " "\e[00m"
@@ -19,7 +19,7 @@ do
 done
 
 echo "grayscale:"
-for i in $(seq 232 255)
+for i in {232..255}
 do
     printf %0b%s%0b "\e[48;5;${i}m" " " "\e[00m"
 done
